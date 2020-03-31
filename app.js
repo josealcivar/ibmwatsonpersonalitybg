@@ -27,7 +27,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-
+    // "username": `DESKTOP-CFGHQSK\JoseAndre`,
+    // "password": "",
+    // "database": "talentodb",
+    // "host": `DESKTOP-CFGHQSK\SQLEXPRESS`,
+    // "dialect": "mssql",
 
 
 
@@ -38,6 +42,9 @@ app.use('/users', usersRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
+
+
 
 // error handler
 app.use(function(err, req, res, next) {

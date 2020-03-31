@@ -80,6 +80,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="box-body">
                       <div class="form-group">
                         <label for="descripcion">Codigo Empleado</label>
+                        <InputText type="text" v-model="bodyFormData.code_employee"/>
                         <input type="text" class="form-control" v-model="bodyFormData.code_employee"/>
                       </div>
                     </div>
@@ -115,7 +116,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </section>
     <!-- /.content -->
 
-    {{ info }}
+    {{ bodyFormData.code_employee }}
   </div>
         <section class="content">
   <div class="row">
@@ -213,7 +214,8 @@ chart.draw();
 });
 </script>
     <script>
-      
+      import InputText from 'primevue/inputtext';
+
               var app = new Vue({
           el: '#app',
   

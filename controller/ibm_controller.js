@@ -1,15 +1,16 @@
 const PersonalityInsightsV3 = require('ibm-watson/personality-insights/v3');
 const { IamAuthenticator } = require('ibm-watson/auth');
 
+
 const api_key= '-QbkdSCsbM86DChG2pkay0CaTpnLzX_MBcpNbKsocf8B';
 const url='https://api.us-south.personality-insights.watson.cloud.ibm.com/instances/4f4ee298-7964-4316-a650-fe53025c30c3';
 
-module.exports = function_profile = async (req, res, next)=>{
+return module.exports = function_profile = async (req, res, next)=>{
 
-  let parametro = req.body.bodyFormData;
-
-
-
+  let datos_usuarios = req.body.bodyFormData;
+  console.log("parametro");
+  console.log(datos_usuarios);
+  await saveResultWatson(datos_usuarios);
     const personalityInsights = new PersonalityInsightsV3({
         version: '2017-10-13',
         authenticator: new IamAuthenticator({
@@ -18,13 +19,12 @@ module.exports = function_profile = async (req, res, next)=>{
         url: url,
         disableSslVerification: true
       });
-      console.log("req.body");
-      console.log(req.body);
+      
     var parametros={ 
         "contentItems": [
             {
               "userid":"jose",
-               "content": parametro.data,
+               "content": datos_usuarios.dataPersonality,
                "contenttype": "text/plain",
                "created": 14476391354000,
                "id": "freetexts",
@@ -59,7 +59,11 @@ module.exports = function_profile = async (req, res, next)=>{
         console.log('error:', err);
       });
     
-  
-    
 }
 
+
+const saveResultWatson = (resultado_test) => {
+
+
+ 
+}
