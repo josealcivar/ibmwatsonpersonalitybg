@@ -10,7 +10,8 @@ return module.exports = function_profile = async (req, res, next)=>{
   let datos_usuarios = req.body.bodyFormData;
   console.log("parametro");
   console.log(datos_usuarios);
-  await saveResultWatson(datos_usuarios);
+  
+  //await saveResultWatson(datos_usuarios);
     const personalityInsights = new PersonalityInsightsV3({
         version: '2017-10-13',
         authenticator: new IamAuthenticator({
@@ -28,7 +29,7 @@ return module.exports = function_profile = async (req, res, next)=>{
                "contenttype": "text/plain",
                "created": 14476391354000,
                "id": "freetexts",
-               "language": "es" 
+               "language": "es-EC" 
             }
         ]
     };
@@ -37,7 +38,8 @@ return module.exports = function_profile = async (req, res, next)=>{
         //content: require('./profile.json'),
         content: parametros,
         contentType: 'application/json',
-        contentLanguage:'es-EC',
+        contentLanguage:'es',
+        acceptLanguage:'es',
         consumptionPreferences: true,
         rawScores: true,
       };
@@ -45,7 +47,10 @@ return module.exports = function_profile = async (req, res, next)=>{
       personalityInsights.profile(profileParams)
       .then(profile => {
         console.log('successfull');
-     //   console.log(profile);
+       profile.result.personality.forEach(element => {
+        console.log(element);
+       });
+        
         console.log('successfull 2');
           res.status(200).json({
             estado: true,
@@ -64,6 +69,6 @@ return module.exports = function_profile = async (req, res, next)=>{
 
 const saveResultWatson = (resultado_test) => {
 
-
+return true;
  
 }

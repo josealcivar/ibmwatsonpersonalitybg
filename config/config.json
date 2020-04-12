@@ -1,25 +1,26 @@
 {
-  "development": {
+  "test": {
     "username": "root",
     "password": "",
-    "database": "usagestatsappsbg",
+    "database": "talentodb",
     "host": "localhost",
     "dialect": "mysql",
-    "operatorsAliases": false
+    "logging": false
   },
-  "test": {
+  "development": {
     "username": "kyjpleqwzwnahv",
     "password": "1fe0b75094965540bc0e23339ab4c8446f8860e47e69856ecde84e24b826c2b6",
     "database": "dbktmsb4gkbeb9",
     "host": "ec2-54-197-48-79.compute-1.amazonaws.com",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "logging": false
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
-    "operatorsAliases": false
+    "username": "kyjpleqwzwnahv",
+    "password": "1fe0b75094965540bc0e23339ab4c8446f8860e47e69856ecde84e24b826c2b6",
+    "database": "dbktmsb4gkbeb9",
+    "host": "ec2-54-197-48-79.compute-1.amazonaws.com",
+    "dialect": "postgres",
+    "logging": false
   }
 }
