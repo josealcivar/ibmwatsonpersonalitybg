@@ -8,7 +8,7 @@ const url='https://api.us-south.personality-insights.watson.cloud.ibm.com/instan
 return module.exports = function_profile = async (req, res, next)=>{
 
   let datos_usuarios = req.body.bodyFormData;
-  console.log("parametro");
+  
   console.log(datos_usuarios);
   
   //await saveResultWatson(datos_usuarios);
